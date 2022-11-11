@@ -3,11 +3,15 @@
 <head>
     <title>Hello World!</title>
     <script>
-        if ('geolocation' in navigator) {
-            console.log('hello');
-        } else {
-            console.log('shite');
-        }
+        const successCallback = (position) => {
+            console.log(position);
+        };
+
+        const errorCallback = (error) => {
+            console.log(error);
+        };
+
+        navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
     </script>
 </head>
 <body>
